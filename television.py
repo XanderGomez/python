@@ -28,16 +28,16 @@ class Television():
         This function mutes the tv if it is unmuted and unmutes it if it's muted.
 
         '''
-        if self.__mute == False:
-            self.__mute = True
+        if self.__muted == False:
+            self.__muted = True
         else:
-            self.__mute = False
+            self.__muted = False
     def channel_up(self) -> None:
         '''
         This function increases the current channel of the television by 1, unless it's at the max channel, in which case it goes to the minimum channel
 
         '''
-        if self.__power == True:
+        if self.__status == True:
             if self.__channel == Television.MAX_CHANNEL:
                 self.__channel = Television.MIN_CHANNEL
             else:
@@ -47,7 +47,7 @@ class Television():
         This function decreases the current channel of the television by 1, unless it's at the min channel, in which case it goes to the maximum channel
         
         '''
-        if self.__power == True:
+        if self.__status == True:
             if self.__channel == Television.MIN_CHANNEL:
                 self.__channel = Television.MAX_CHANNEL
             else:
@@ -58,7 +58,7 @@ class Television():
         This function increases the volume by one, unless it's at the max volume, in which case the volume remains the same
 
         '''
-        if self.__power == True:
+        if self.__status == True:
             if self.__volume != Television.MAX_VOLUME:
                 self.__volume += 1
     def volume_down(self) -> None:
@@ -67,7 +67,7 @@ class Television():
         This function decreases the volume by one, unless it's at the min volume, in which case the volume remains the same
 
         '''
-        if self.__power == True:
+        if self.__status == True:
             if self.__volume != Television.MIN_VOLUME:
                 self.__volume -= 1
     def __str__(self) -> str:
