@@ -28,10 +28,11 @@ class Television():
         This function mutes the tv if it is unmuted and unmutes it if it's muted.
 
         '''
-        if self.__muted == False:
-            self.__muted = True
-        else:
-            self.__muted = False
+        if self.__status == True:
+            if self.__muted == False:
+                self.__muted = True
+            else:
+                self.__muted = False
     def channel_up(self) -> None:
         '''
         This function increases the current channel of the television by 1, unless it's at the max channel, in which case it goes to the minimum channel
@@ -81,6 +82,6 @@ class Television():
         if self.__muted == False:
             return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume}'
         else:
-            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = 0'
+            return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {MIN_VOLUME}'
 
 
